@@ -1,6 +1,6 @@
 {
   "name": "react-break-paragraph",
-  "main": "lib/tilt-react-break-paragraph.js",
+  "main": "lib/react-break-paragraph.js",
   "version": "0.1.0",
   "devDependencies": {
     "autoprefixer": "^6.7.1",
