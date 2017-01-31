@@ -19,7 +19,7 @@ export default class BreakParagraph extends Component {
     setTimeout(()=>{
       this.breakPara();
     });
-    window.onresize = () => this.breakPara();
+    window.onresize = () => setTimeout(() => this.breakPara());
   }
 
   breakPara = () => {
@@ -38,7 +38,9 @@ export default class BreakParagraph extends Component {
         lines[topIndex].push(span.innerText.trim());
       }
     });
+
     lines = lines.map(line => line.join(' '));
+    // console.log(lines);
 
     this.setState({
       breakParagraph: true,
@@ -50,8 +52,11 @@ export default class BreakParagraph extends Component {
     const { breakParagraph, lines } = this.state;
     const { paragraph, renderPlaceholder, renderLines } = this.props;
 
-    const spans = paragraph.split(' ')
-      .map((word, i) => <span key={i} ref={elem => this.spans[i] = elem}>{word} </span>);
+    const spans = paragraph
+      .split(' ')
+      .map((word, i) => <span
+        key={i}
+        ref={elem => this.spans[i] = elem}>{word + ' '}</span>);
     return (
       <div style={{
         width: '100%',
