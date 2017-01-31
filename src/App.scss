@@ -1,0 +1,8 @@
+.magicSpan {
+  display: inline-block;
+  overflow-y: hidden;
+  height: 39px;
+  > span {
+    display: inline-block;
+  }
+}
