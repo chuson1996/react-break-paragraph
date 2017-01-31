@@ -21,8 +21,6 @@ class App extends Component {
 
   render() {
     const renderLines = (lines) => {
-      const s = require('./App.scss');
-
       return (
         <StaggeredMotion
           defaultStyles={Array(lines.length).fill({ y: 39 })}
@@ -32,7 +30,7 @@ class App extends Component {
           {(styles) =>
             <h1>
               {styles.map(({ y }, i) =>
-                <span key={i} className={s.magicSpan}>
+                <span key={i}>
                   <span style={{
                     transform: `translateY(${y}px)`
                   }}>{lines[i]}</span>
