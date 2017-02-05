@@ -55,6 +55,7 @@ export default class BreakParagraph extends Component {
     const spans = paragraph
       .split(' ')
       .map((word, i) => <span
+        style={{ pointerEvents: 'none' }}
         key={i}
         ref={elem => this.spans[i] = elem}>{word + ' '}</span>);
     return (
